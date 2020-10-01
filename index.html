@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script</title>
+</head>
+<body>
+    <div>
+        <button value="1">1</button>
+        <button value="2">2</button>
+        <button value="3">3</button>
+    </div>
+
+    <div>
+        <h2 id="text"></h2>
+        <div id="img"></div>
+        <div>
+            <p id="txt"></p>
+        </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script>
+
+    $("button").click(function() {
+        var btn = $(this).val();
+
+        function tocno(pp){
+            $("#img").html("<img src='img/"+pp+".jpg' height='200' />");
+        }
+
+        function netocno(){
+            $("#text").html("Ne postoji u bazi!");
+            $("#img").html("<img src='img/netocno.png' height='200' />");
+        }
+
+        if(btn == 1){
+            tocno(btn);
+            const title = "Prvi slucaj";
+            document.getElementById("text").innerHTML = title;
+            const txt = "Ovo je za prvi slučaj!";
+            document.getElementById("txt").innerHTML = txt;
+        }
+        else if(btn == 2){
+            tocno(btn);
+            const title = "Drugi slucaj";
+            document.getElementById("text").innerHTML = title;
+            const txt = "Ovo je za drugi slučaj!";
+            document.getElementById("txt").innerHTML = txt;
+        }
+        else {
+            netocno();
+            document.getElementById("txt").innerHTML = "";
+        }
+
+    });
+    
+</script>
+</body>
+</html>
